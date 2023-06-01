@@ -16,7 +16,8 @@ public class Main {
                 Hotel.ob = (Holder) ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
-            int choice1, choice2;
+            int choice1;
+            int choice2=-1;
             char wantToContinue;
             x: do {
 
@@ -46,9 +47,11 @@ public class Main {
                         else{System.out.println("Invalid choice!");}
                         break;
                     case 4:
+                        if(choice2 == -1){System.out.print("Room not booked");break;}
                         System.out.print("Room Number -");
                         choice2 = sc.nextInt();
-                        if (choice2 > 60)
+
+                        if ( choice2 > 60 )
                             System.out.println("Room doesn't exist");
                         else if (choice2 > 40)
                             Hotel.order(choice2 - 41, 4);

@@ -40,7 +40,10 @@ public class Main {
                         System.out.println(
                                 "\nChoose Room Type :\n1.Luxury Double Bedroom\n2.Deluxe Double Bedroom\n3.Luxury Single Bedroom\n4.Deluxe Single Bedroom\n");
                         choice2 = sc.nextInt();
-                        Hotel.bookroom(choice2);
+                        if(choice2==1||choice2==2||choice2==3||choice2==4){
+                            Hotel.bookroom(choice2);
+                        }
+                        else{System.out.println("Invalid choice!");}
                         break;
                     case 4:
                         System.out.print("Room Number -");
@@ -79,12 +82,12 @@ public class Main {
                     default:
                         System.out.println("Invalid Option !!!");
                 }
-                System.out.println("\nContinue : (y/n)");
+                System.out.println("\nDo you wish to continue : (y/n)");
                 wantToContinue = sc.next().charAt(0);
                 if (!(wantToContinue == 'y' || wantToContinue == 'Y' || wantToContinue == 'n'
                         || wantToContinue == 'N')) {
                     System.out.println("Invalid Option");
-                    System.out.println("\nContinue : (y/n)");
+                    System.out.println("\nDo you wish to continue : (y/n)");
                     wantToContinue = sc.next().charAt(0);
                 }
 
